@@ -27,7 +27,7 @@ class CircleWalletViewModel: ObservableObject {
     struct UserData: Codable {
         let userId: String
         let userToken: String
-        let secretKey: String
+        let encryptionKey: String
         let challengeId: String
     }
     
@@ -52,8 +52,6 @@ class CircleWalletViewModel: ObservableObject {
     struct Token: Identifiable, Codable {
         let id: String
         let blockchain: String
-        let tokenAddress: String
-        let standard: String
         let name: String
         let symbol: String
         let decimals: Int
@@ -98,7 +96,7 @@ class CircleWalletViewModel: ObservableObject {
                     DispatchQueue.main.async{
                         self.userToken = userData.userToken
                         UserDefaults.standard.set(self.userToken, forKey: "circleUserToken")
-                        self.secretKey = userData.secretKey
+                        self.secretKey = userData.encryptionKey
                         self.challengeId = userData.challengeId
                         self.userId = userData.userId
                         UserDefaults.standard.set(self.userId, forKey: "circleUserId")
@@ -119,7 +117,7 @@ class CircleWalletViewModel: ObservableObject {
     
     func executeChallenge() {
         WalletSdk.shared.execute(userToken: self.userToken,
-                                 secretKey: self.secretKey,
+                                 encryptionKey: self.secretKey,
                                  challengeIds: [self.challengeId]) { response in
             switch response.result {
             case .success(let result):
@@ -153,7 +151,7 @@ class CircleWalletViewModel: ObservableObject {
                     DispatchQueue.main.async{
                         self.userToken = userData.userToken
                         UserDefaults.standard.set(self.userToken, forKey: "circleUserToken")
-                        self.secretKey = userData.secretKey
+                        self.secretKey = userData.encryptionKey
                         self.challengeId = userData.challengeId
                         self.userId = userData.userId
                         UserDefaults.standard.set(self.userId, forKey: "circleUserId")

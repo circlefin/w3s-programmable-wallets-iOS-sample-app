@@ -53,7 +53,8 @@ $ brew
 5. Open the `.xcworkspace` file in Xcode
 <img src="readme_images/screenshot_2.png" width="400"/>
 
-## Add your Google Sign-In client ID, reversed client ID, and API key
+## Get config file for your iOS app
+Make sure you visit Firebase and click Go to console on the top right button and you’ll be brought to a page where all your apps that you have previously linked to will be shown here. Click on the app that you would like to download your GoogleService-info.plist.
 <img src="readme_images/plist.png">
 
 ## Run the project
@@ -64,4 +65,3 @@ $ brew
 
 3. Set your `AppID` in the simulator
 <img src="readme_images/app_id.png" width="1000"/>
-# circle-programmable-wallets-iOS-sample-app
