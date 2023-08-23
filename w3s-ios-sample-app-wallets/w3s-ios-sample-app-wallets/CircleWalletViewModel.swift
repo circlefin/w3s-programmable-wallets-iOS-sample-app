@@ -38,14 +38,14 @@ class CircleWalletViewModel: ObservableObject {
         let custodyType: String
         let userId: String
         let address: String
-        let addressIndex: Int
         let blockchain: String
+        let accountType: String
         let updateDate: String
         let createDate: String
         var balances = [TokenBalance]()
         
         private enum CodingKeys: String, CodingKey {
-            case id, state, walletSetId, custodyType, userId, address, addressIndex, blockchain, updateDate, createDate
+            case id, state, walletSetId, custodyType, userId, address, blockchain, accountType, updateDate, createDate
         }
     }
     
