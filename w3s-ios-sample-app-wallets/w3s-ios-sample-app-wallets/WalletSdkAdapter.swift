@@ -25,6 +25,7 @@ class WalletSdkAdapter {
 
         WalletSdk.shared.setLayoutProvider(self)
         WalletSdk.shared.setDelegate(self)
+        WalletSdk.shared.customUserAgent = "PW-IOS-SAMPLE-APP"
     }
 
     func updateEndPoint(_ endPoint: String, appId: String) {
